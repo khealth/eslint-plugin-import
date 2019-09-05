@@ -557,7 +557,7 @@ module.exports = {
             astNode.specifiers.forEach(specifier => {
               let name
               if (specifier.exported.name === DEFAULT) {
-                name = IMPORT_DEFAULT_SPECIFIER
+                name = specifier.local ? specifier.local.name : null;
               } else {
                 name = specifier.local.name
               }
